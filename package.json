@@ -1,0 +1,42 @@
+{
+  "name": "gcp-bigquery-slot-commitment-advisor",
+  "version": "1.0.0",
+  "description": "Board-readable GCP BigQuery slot commitment advisor for reservation fit, idle-slot waste, on-demand exposure, and FinOps purchase sequencing.",
+  "type": "module",
+  "bin": {
+    "gcp-bigquery-slot-commitment-advisor": "./bin/cli.js"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage",
+    "build": "tsc",
+    "demo": "node dist/bin/cli.js fixtures/bigquery-slot-commitment-sample.json --format markdown",
+    "prerender": "tsx scripts/prerender.ts",
+    "smoke": "tsx scripts/smoke_check.ts",
+    "verify": "npm run lint && npm run typecheck && npm run test && npm run build && npm run demo && npm run prerender && npm run smoke"
+  },
+  "keywords": [
+    "gcp",
+    "bigquery",
+    "slot-commitments",
+    "finops",
+    "cloud-cost",
+    "cost-governance",
+    "platform-engineering",
+    "kinetic-gain"
+  ],
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@types/node": "^22.15.29",
+    "@vitest/coverage-v8": "^4.1.8",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1",
+    "vitest": "^4.1.8"
+  }
+}
+
